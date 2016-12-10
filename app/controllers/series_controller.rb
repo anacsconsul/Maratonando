@@ -71,6 +71,6 @@ class SeriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def series_params
-      params.fetch(:series, {})
+      params.require(:series).permit(:name,:category, :year, :summary, :site, :rating)
     end
 end
