@@ -11,6 +11,7 @@ class SeriesController < ApplicationController
   # GET /series/1
   # GET /series/1.json
   def show
+    @serie=Series.find(params[:id])
   end
 
   # GET /series/new

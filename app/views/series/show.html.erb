@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+<div class="col-md-4">
+	<%=image_tag "#{@serie.id}.jpg", class:"img-circle", width: "80%"%>
+</div>
+<div class="col-md-8">
+
+		<h2>nome:<%= @serie.name %></h2>
+		<h4>categoria:<%= @serie.category %></H4>
+		<h4>ano:<%= @serie.year %></H4>
+		<h4>resumo:<%= @serie.summary %></H4>
+		<h4>site: <a href="http://<%= @serie.site %>"><%= @serie.site %></H4>
+	</div>
+	</div>
 
 <%= link_to 'Edit', edit_series_path(@series) %> |
 <%= link_to 'Back', series_index_path %>

@@ -1,4 +1,27 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+<div class="col-md-4">
+	<%=image_tag "rails.png", class:"img-circle", width: "80%"%>
+</div>
+<div class="col-md-8">
+
+		<h2>nome:<%= @user.name %></h2>
+		<h4>email:<%= @user.email %></H4> <br><br>
+		<h2>estante
+		(<%= @user.series_users.count %>)</h2>
+			
+		<% @user.series_users.each do |serie_user| %>
+			<a class="btn btn-primary btn-lg" href="/series/<%= serie_user.series.id %>">
+				<%= serie_user.series.name %>
+			</a>
+		<h4>status:<%= serie_user.status %></H4> 
+		<h4>season:<%= serie_user.season %></H4> 
+		<h4>episode:<%= serie_user.episode %></H4>
+		<h4>rating:<%= serie_user.series.rating %></h4>
+		<br>
+		<% end %> 
+	</div>
+	</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
