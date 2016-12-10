@@ -1,0 +1,22 @@
+<%= form_for(series_user) do |f| %>
+  <% if series_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+usuario: <%= f.text_field :user_id %> <br>
+serie: <%= f.text_field :series_id %> <br>
+<%= f.select :status, [["Quero Assistir","Quero Assistir"],["Assistindo","Assistindo"],["Já Assisti","Já Assisti"]]%> 
+<br>
+temporada: <%= f.text_field :season %> <br>
+episodio: <%= f.text_field :episode %> <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

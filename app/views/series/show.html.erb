@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<div>Nome: <%= @series.name%></div>
+<div>Categoria: <%= @series.category%></div>
+<div>Ano: <%= @series.year%></div>
+<div>Descrição: <%= @series.summary%></div>
+<div>Site: <%= @series.site%></div>
+<div>Avaliação: <%= @series.rating%></div>
+<hr>
 <%= link_to 'Edit', edit_series_path(@series) %> |
 <%= link_to 'Back', series_index_path %>
